@@ -1,0 +1,334 @@
+@font-face {
+    font-family: "GothicByte";
+    src: url("fonts/GothicByte.ttf") format("truetype");
+
+    
+}
+
+@font-face{
+    font-family: "Basis33";
+    src: url("fonts/basis33.ttf") format("truetype");
+}
+
+body{
+    margin:0;
+    background-image:url("images/websitebg.png");
+    background-size: 100% 100%;
+    background-position:center;
+    background-repeat:no-repeat;
+    
+    height:100vh;
+    width: 100vw;
+
+    font-family:"Basis33";
+    font-size: 20px;
+    color:white;
+}
+
+h1{
+    font-family: "GothicByte";
+    font-size: 40px;
+    text-align: left;
+    transform: translate(30px, -10px);
+    color: rgb(255, 255, 255);
+    
+}
+
+
+
+.menu-border {
+    width: 200%;
+    display: block;
+}
+
+
+
+.interface {
+
+  
+    position: relative;
+    
+    width: 1100px;
+    height: 700px;
+    
+    margin: auto;
+    
+    /*border: 2px solid rgb(193, 182, 182);*/
+}
+
+.header {
+    position: absolute;
+    top: 20px;
+    left:20px;
+
+    width: 1075px;
+    height: 80px;
+
+    background-color:rgba(0, 0, 0, 0.5);
+    
+    
+}
+
+.intro {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    width: 250px;
+    height: 450px;
+    background-color:rgba(0, 0, 0, 0.5);
+    
+}
+
+.art {
+    position: absolute;
+    top: 120px;
+    left: 300px;
+
+    width: 420px;
+    height: 200px;
+    background-color:rgba(0, 0, 0, 0.5);
+
+}
+
+.menu {
+    position: absolute;
+    top: 120px;
+    right: 0px;
+
+    width: 200px;
+    height: 280px;
+
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.links {
+    position: absolute;
+
+    bottom: 50px;
+    right:0px;
+
+    width: 200px;
+    height: 210px;
+    background-color:rgba(0, 0, 0, 0.5);
+
+}
+
+.footer {
+    position: absolute;
+
+    bottom: 20px;
+    right: 50 px;
+
+    width: 500px;
+    height: 100px;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.song{
+    position: absolute;
+
+    bottom: 50px;
+    right: 250px;
+    width: 200px;
+    height: 150px;
+}
+.header,
+.intro,
+.art,
+.menu,
+.links,
+.song,
+.footer {
+    border: 2px solid rgb(220, 213, 202);
+}
+
+.button {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+}
+
+.button img {
+    width: 100%;
+    display: block;
+}
+
+.button span {
+    position: absolute;
+    
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -40%);
+
+    font-family: "Basis33";
+    font-size: 25px;
+
+    color: rgb(255, 255, 255);
+}
+
+.button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.button:active {
+    transform: scale(0.95);
+}
+.doodleofme img{
+    width: 200px;
+    transform: translate(25px, 25px);
+}
+
+.links img{
+    width: 100px;
+    transform:translate(50px, 25px);
+}
+.linkbutton{
+    position: relative;
+    display: inline-block;
+    width: 120px;
+}
+.linkbutton img{
+    width: 120px;
+    transform: translate(45px, 75px);
+}
+.linkbutton span {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(15px, 65px);
+
+    font-family: "Basis33";
+    font-size: 15px;
+
+    color: rgb(255, 255, 255);
+}
+
+.linkbutton:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.linkbutton:active {
+    transform: scale(0.97);
+}
+
+.links p{
+    text-align: center;
+    font-size: 15px;
+    transform:translateY(-27px);
+}
+
+.intro p{
+    text-align: center;
+    font-size: 20px;
+    transform:translate(0px, 15px);
+    padding-left: 20px;
+    padding-right: 20px;
+}   
+
+
+/* about me stuff */
+
+.aboutinterface {
+
+  
+    position: relative;
+    
+    width: 1100px;
+    height: 700px;
+    
+    margin: auto;
+    
+    
+}
+.aboutheader{
+    position: absolute;
+    top: 20px;
+    left:20px;
+
+    width: 1075px;
+    height: 80px;
+
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.aboutme{
+    position: absolute;
+    top: 200px;
+    right: 175px;
+
+    width: 600px;
+    height: 400px;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+.aboutinterface h1{
+    text-align: left;
+    transform: translate(45px, 40px);
+}
+.aboutme p{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pic {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    width: 350px;
+    height: 400px;
+    background-color:rgba(0, 0, 0, 0.5);
+    border: 2px solid rgb(220, 213, 202);
+    
+}
+
+.picofme img{
+    width: 300px;
+    transform: translate(25px, 25px);
+}
+
+.aboutheader,
+.aboutme{
+    border: 2px solid rgb(220, 213, 202);
+}
+
+
+.aboutback{
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    
+    
+}
+.aboutback img{
+    width: 200px;
+    transform:translate(75px, 50px);
+    z-index: -1;
+}
+.aboutback span {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(90px, 37px);
+
+    font-family: "Basis33";
+    font-size: 23px;
+
+    color: rgb(255, 255, 255);
+}
+
+.aboutback:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.aboutback:active {
+    transform: scale(0.97);
+}
+
