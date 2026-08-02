@@ -10,12 +10,13 @@
     src: url("fonts/basis33.ttf") format("truetype");
 }
 
-body{
+body.home, body.about{
     margin:0;
     background-image:url("images/websitebg.png");
     background-size: 100% 100%;
     background-position:center;
     background-repeat:no-repeat;
+    background-attachment: fixed;;
     
     height:100vh;
     width: 100vw;
@@ -24,6 +25,24 @@ body{
     font-size: 20px;
     color:white;
 }
+
+
+
+
+.clock{
+    position: absolute;
+    font-size: 20px;
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    width: 400px;
+    height: 50px;
+    top:10px;
+    right: -40px;
+    
+}
+
 
 h1{
     font-family: "GothicByte";
@@ -36,24 +55,23 @@ h1{
 
 
 
-.menu-border {
-    width: 200%;
-    display: block;
-}
 
 
 
 .interface {
 
   
-    position: relative;
+    position: absolute;
     
-    width: 1100px;
-    height: 700px;
-    
+    width: 1200px;
+    height: 675px;
+    top: 10px;
+    left: 115px;
     margin: auto;
+
     
-    /*border: 2px solid rgb(193, 182, 182);*/
+    
+    
 }
 
 .header {
@@ -61,7 +79,7 @@ h1{
     top: 20px;
     left:20px;
 
-    width: 1075px;
+    width: 1155px;
     height: 80px;
 
     background-color:rgba(0, 0, 0, 0.5);
@@ -71,17 +89,19 @@ h1{
 
 .intro {
     position: absolute;
-    top: 120px;
+    top: 130px;
     left: 20px;
     width: 250px;
-    height: 450px;
+    height: 390px;
     background-color:rgba(0, 0, 0, 0.5);
     
 }
 
+
+
 .art {
     position: absolute;
-    top: 120px;
+    top: 130px;
     left: 300px;
 
     width: 420px;
@@ -92,8 +112,8 @@ h1{
 
 .menu {
     position: absolute;
-    top: 120px;
-    right: 0px;
+    top: 130px;
+    right: 20px;
 
     width: 200px;
     height: 280px;
@@ -104,8 +124,8 @@ h1{
 .links {
     position: absolute;
 
-    bottom: 50px;
-    right:0px;
+    bottom: 20px;
+    right:20px;
 
     width: 200px;
     height: 210px;
@@ -127,10 +147,18 @@ h1{
 .song{
     position: absolute;
 
-    bottom: 50px;
-    right: 250px;
-    width: 200px;
-    height: 150px;
+    bottom: 20px;
+    left: 20px;
+    width: 250px;
+    height: 100px;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.song p{
+    padding-left: 20px;
+    padding-right:20px;
+    font-size: 15px;
+    transform: translate(0px, -65px);
 }
 .header,
 .intro,
@@ -231,18 +259,51 @@ h1{
     padding-right: 20px;
 }   
 
+.playbutton{
+    position: relative;
+    display: inline-block;
+}
+.playbutton img{
+    width: 130px;
+    transform:translate(60px, 40px);
+}
+.playbutton span{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(45px, 30px);
+
+    font-family: "Basis33";
+    font-size: 15px;
+
+    color: rgb(255, 255, 255);
+}
+.playbutton:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.playbutton:active {
+    transform: scale(0.97);
+}
+
+
 
 /* about me stuff */
 
 .aboutinterface {
 
   
-    position: relative;
+    position: absolute;
     
-    width: 1100px;
-    height: 700px;
-    
+    width: 1200px;
+    height: 1000px;
+    top: 10px;
+    left: 115px;
     margin: auto;
+    
     
     
 }
@@ -251,25 +312,37 @@ h1{
     top: 20px;
     left:20px;
 
-    width: 1075px;
+    width: 1155px;
     height: 80px;
 
     background-color:rgba(0, 0, 0, 0.5);
 }
+.aboutmenu{
+    position: absolute;
+    top: 130px;
+    right: 20px;
+
+    width: 200px;
+    height: 280px;
+
+    background-color:rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+}
 
 .aboutme{
     position: absolute;
-    top: 200px;
-    right: 175px;
+    top: 130px;
+    right: 275px;
 
-    width: 600px;
-    height: 400px;
+    width: 500px;
+    height: 280px;
     background-color:rgba(0, 0, 0, 0.5);
 }
 .aboutinterface h1{
     text-align: left;
-    transform: translate(45px, 40px);
+    
 }
+
 .aboutme p{
     padding-left: 20px;
     padding-right: 20px;
@@ -277,10 +350,10 @@ h1{
 
 .pic {
     position: absolute;
-    top: 200px;
-    left: 200px;
+    top: 130px;
+    left: 20px;
     width: 350px;
-    height: 400px;
+    height: 280px;
     background-color:rgba(0, 0, 0, 0.5);
     border: 2px solid rgb(220, 213, 202);
     
@@ -296,39 +369,186 @@ h1{
     border: 2px solid rgb(220, 213, 202);
 }
 
+.favgames{
+    position:absolute;
+    top:450px;
+    left:20px;
+    width:200px;
+    height:280px;
+    background-color:rgba(0, 0, 0, 0.5);
+    border:2px solid white;
+}
 
-.aboutback{
-    position: relative;
-    display: inline-block;
-    width: 120px;
+.favsongs{
+    position:absolute;
+    top:450px;
+    left:250px;
+    width:200px;
+    height:280px;
+    background-color:rgba(0, 0, 0, 0.5);
+    border:2px solid white;
+}
+
+
+
+
+/*
+gallery page stuff
+*/
+
+
+body.gallery{
+    margin:0;
+    background-image: url("images/blackbg.png");
     
+    background-position:center;
+    background-repeat:repeat;
+    
+    background-attachment: fixed;
+    
+    height:1800px;
+    width: 100vw;
+
+    font-family:"Basis33";
+    font-size: 20px;
+    color:white;
     
 }
-.aboutback img{
-    width: 200px;
-    transform:translate(75px, 50px);
-    z-index: -1;
-}
-.aboutback span {
+
+
+.galleryinterface{
     position: absolute;
-
-    top: 50%;
+    width: 1300px;
+    height: 2300px;
+    top: 10%;
     left: 50%;
-
-    transform: translate(90px, 37px);
-
-    font-family: "Basis33";
-    font-size: 23px;
-
-    color: rgb(255, 255, 255);
+    transform:translateX(-50%);
+    margin: auto;
+    
+}
+.galleryheader{
+    position: absolute;
+    top: 5%;
+    left:50%;
+    transform: translate(-50%, -50%);
+   
+    width: 450px;
+    height: 200px;
+    
+}
+.galleryheader h1{
+    top:0%;
+    left:50%;
+    transform:translate(0%, 0%);
+    text-align: center; 
+    color: white;
+    
+}
+.galleryheader p{
+    color:white;
+   
+}
+.gallery span{
+    color:white;
+    font-size:19px;
 }
 
-.aboutback:hover {
-    transform: scale(1.03);
-    cursor: pointer;
+.gallerymenu{
+    display:flex;
+    justify-content: center;
+    gap:0px;
+    position: absolute;
+    width: 300px;
+    top: 5%;
+    left:50%;
+    transform: translateX(-50%);
+   
+    
 }
 
-.aboutback:active {
-    transform: scale(0.97);
+.gallery .button img{
+    width: 100px;
+   
 }
 
+.forcefed img{
+    position: absolute;
+    width: 500px;
+    top: 200px;
+    left: 10%;
+}
+
+.stimulant img{
+    position:absolute;
+    width: 500px;
+    top:1270px;
+    right: 10%;
+}
+
+.smear img{
+    position: absolute;
+    width: 500px;
+    top:900px;
+    left: 10%;
+}
+
+.redbloodything img{
+    position:absolute;
+    width: 500px;
+    top: 735px;
+    right: 10%;
+}
+
+.swallowmyself img{
+    position: absolute;
+    width: 500px;
+    top: 200px;
+    right: 10%;
+}
+
+.selfportrait img{
+    position: absolute;
+    width:500px;
+    top:1605px;
+    left: 10%;
+}
+
+/* force fed page*/
+
+body.forcefedpage{
+    margin:0;
+    background-image: url("images/darkbg.jpeg");
+    
+    background-position:center;
+    background-repeat:repeat;
+    
+    background-attachment: fixed;
+    
+    height:1300px;
+    width: 100vw;
+
+    font-family:"Basis33";
+    font-size: 20px;
+    color:white;
+}
+.forcefedinterface{
+    position: absolute;
+    width: 1300px;
+    height: 1300px;
+    top: 25%;
+    left: 50%;
+    transform:translateX(-50%);
+    margin: auto;
+    
+}
+.forcefedlarge img{
+    position:absolute;
+    top: 5%;
+    right: 5%;
+    width: 600px;
+}
+/*
+* {
+    outline: 2px solid red;
+}
+*/

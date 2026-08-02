@@ -6,23 +6,28 @@
     <title>mishka!!</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home">
     
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 
     <div class="interface">
         <div class = "header">
-            <h1>mishka. studio</h1>
+            <h1>mishka. studio       \_(^.^)_/</h1>
+            
+
+            <div class="clock">
+                <p id="date-time"></p>
+            </div>
+
         </div>
 
         <div class ="intro">
             <div class="doodleofme">
                 <img src="images/doodleofme.png">
             </div>
-
             <p>hi!! i'm mishka, this is my little  passion project to share some of my art. 
-                take a look around and leave me a doodle <3
-            </p>
+                take a look around and leave me a doodle <3</p>
+            
         </div>
 
         <div class="art">
@@ -44,10 +49,7 @@
                 <img src="images/buttonwhite.png">
                 <span>blog</span>
             </div>
-
-           
-            
-            
+   
         </div>
 
         <div class="links">
@@ -64,7 +66,15 @@
         </div>
 
         <div class="song">
-            SONG
+            <audio id="dogsong2"
+                src="audio/dogsong2.mp3" type="audio/mpeg"></audio>
+            
+
+            <div class = "playbutton" id="playbtn">
+                <img src="images/buttonwhite.png">
+                <span id="playtext">play</span>
+            </div>
+            <p>song of the week: dog song 2 - feeble little horse</p>
         </div>
     </div>
 
