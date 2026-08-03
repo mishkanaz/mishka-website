@@ -48,7 +48,7 @@ h1{
     font-family: "GothicByte";
     font-size: 40px;
     text-align: left;
-    transform: translate(30px, -10px);
+    transform: translate(30px, 10px);
     color: rgb(255, 255, 255);
     
 }
