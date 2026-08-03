@@ -1,0 +1,11 @@
+@font-face {
+    font-family: "GothicByte";
+    src: url("fonts/GothicByte.ttf") format("truetype");
+
+    
+}
+
+@font-face{
+    font-family: "Basis33";
+    src: url("fonts/basis33.ttf") format("truetype");
+}

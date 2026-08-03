@@ -3,63 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gallery!</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
-<body class="gallery">
-    <script src="script.js" defer></script>
-    
-      
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<body class="bg-[url('images/blackbg.png')] bg-center bg-fixed bg-repeat h-screen w-full">
+    <link rel="stylesheet" href="fonts.css">
 
-    <div class="galleryinterface">
-        
-        <div class="galleryheader">
-            <h1>welcome to my gallery</h1>
-        </div>
-        <div class="gallerymenu">
-            <a href="index.html" class="button">
-                <img src="images/buttonwhite.png">
-                <span>home</span>
-            </a>
-            
-            <a href="about.html" class="button">
-                <img src="images/buttonwhite.png">
-                <span>about</span>
-            </a>
-            
-            <div class="button">
-                <img src="images/buttonwhite.png">
-                <span>blog</span>
+    <div>
+        <h1 class="text-3xl md:text-5xl font-[GothicByte] tracking-wide  text-white text-center pt-10">welcome to my gallery</h1>
+       
+        <div class="flex items-center justify-center gap-4 w-full pt-4">
+            <div class="w-24 md:w-32 text-center inline-block">
+                <a href="index.html" class="relative flex items-center justify-center">
+                    <img src="images/buttonwhite.png" class="w-full h-auto">
+                    <span class="absolute text-white text-l md:text-xl font-[Basis33]">home</span>
+                </a>
             </div>
-   
+    
+            <div class="w-24 md:w-32 text-center inline-block">
+                <a href="about.html" class="relative flex items-center justify-center">
+                    <img src="images/buttonwhite.png" class="w-full h-auto">
+                    <span class="absolute text-white text-l md:text-xl font-[Basis33]">about</span>
+                </a>
+            </div>
+    
+            <div class="w-24 md:w-32 text-center inline-block">
+                <a href="blog.html" class="relative flex items-center justify-center">
+                    <img src="images/buttonwhite.png" class="w-full h-auto">
+                    <span class="absolute text-white text-l md:text-xl font-[Basis33]">blog</span>
+                </a>
+            </div>
         </div>
 
-            <a href="forcefed.html" class="forcefed">
-                <img src="art/forcefed.png">
+        
+        
+       
+        <div class="md:flex gap-5 flex justify-center flex-wrap">
+            <a href="forcefed.html" class="md:shrink-0">
+                <img class="h-full w-120 object-scale-down md:h-full md:w-140 pt-10"
+                src="art/forcefed.png"
+                />
             </a>
-          
-        <div class="stimulant">
-            <img src="art/stimulant.JPG">
+
+            <div class="md:shrink-0">
+                <img class="h-full w-120 object-scale-down md:h-full md:w-140 pt-10"
+                src="art/swallowmyself.png"/>
+            </div>
+
+            <div class="md:shrink-0">
+                <img class="h-full w-120 object-scale-down md:h-full md:w-140 pt-10"
+                src="art/smear.png"/>
+            </div>
+
+            <div class="md:shrink-0">
+                <img class="h-full w-120 object-scale-down md:h-full md:w-140"
+                src="art/redbloodything.PNG"/>
+            </div>
+
+            <div class="md:shrink-0">
+                <img class="h-full w-120 object-scale-down md:h-full md:w-140"
+                src="art/stimulant.JPG"/>
+            </div>
+
+            <div class="md:shrink-0">
+                <img class="h-full w-120 object-scale-down md:h-full md:w-140"
+                src="art/selfportrait.png"/>
+            </div>
+
         </div>
-
-        <div class="smear">
-            <img src="art/smear.PNG">
-        </div>
-
-        <div class="redbloodything">
-            <img src="art/redbloodything.PNG">
-        </div>
-
-        <a href="swallowmyself.html" class="swallowmyself">
-            <img src="art/swallowmyself.png">
-        </a>
-
-        <div class="selfportrait">
-            <img src="art/selfportrait.png">
-        </div>
-
-
     </div>
-
+    
 </body>
 </html>

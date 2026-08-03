@@ -534,7 +534,7 @@ body.forcefedpage{
 .forcefedinterface{
     position: absolute;
     width: 1300px;
-    height: 1300px;
+    height: 1200px;
     top: 25%;
     left: 50%;
     transform:translateX(-50%);
@@ -546,6 +546,41 @@ body.forcefedpage{
     top: 5%;
     right: 5%;
     width: 600px;
+}
+
+.statement{
+    position:absolute;
+    top:5%;
+    width: 550px;
+}
+.forcefedheader{
+    position: absolute;
+    top: 0%;
+    left:50%;
+    transform: translate(-50%, -50%);
+   
+    width: 450px;
+    height: 200px;
+}
+.forcefedheader h1{
+    top:0%;
+    left:50%;
+    transform:translate(0%, 0%);
+    text-align: center; 
+    font-size: 50px; 
+    color: white;
+   
+}
+
+.forcefedpage .button{
+    position: absolute;
+    left: 0%;
+    top: -5%;
+    width: 150px;
+}
+
+.forcefedpage span{
+    font-size: 20px;
 }
 /*
 * {
