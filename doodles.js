@@ -13,7 +13,7 @@ const gallery = document.getElementById("doodleGallery");
 async function loadDoodles() {
 
     const { data, error } = await supabaseClient
-        .from("drawings")
+        .from("doodles")
         .select("*")
         .order("created_at", {
             ascending: false

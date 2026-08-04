@@ -78,7 +78,7 @@ window.addEventListener("load", () => {
   ctx.lineWidth = 4;
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
-  ctx.strokeStyle = "black";
+  ctx.strokeStyle = "maroon";
   
   
   canvas.addEventListener("pointerdown", startDrawing);
@@ -171,7 +171,7 @@ submitButton.addEventListener("click", async function() {
 
     const { error: uploadError } =
         await supabaseClient.storage
-            .from("drawings")
+            .from("doodles")
             .upload(fileName, imageBlob, {
                 contentType: "image/png"
             });
@@ -191,7 +191,7 @@ submitButton.addEventListener("click", async function() {
 
     const { data } =
         supabaseClient.storage
-            .from("drawings")
+            .from("doodles")
             .getPublicUrl(fileName);
 
 
@@ -199,7 +199,7 @@ submitButton.addEventListener("click", async function() {
 
     const { error: databaseError } =
         await supabaseClient
-            .from("drawings")
+            .from("doodles")
             .insert([
                 {
                     image_url: data.publicUrl
@@ -254,8 +254,21 @@ async function loadMessages() {
 
         messageElement.classList.add("mb-2");
 
-        messageElement.textContent =
-            `${message.username}: ${message.message}`;
+        const date = new Date(message.created_at);
+
+const formattedDate = date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric"
+});
+
+const formattedTime = date.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit"
+});
+
+messageElement.textContent =
+    `[${formattedDate} ${formattedTime}] ${message.username}: ${message.message}`;
 
         chatMessages.appendChild(messageElement);
 
@@ -322,5 +335,64 @@ sendMessageButton.addEventListener(
 
 loadMessages();
 
+async function updateDoodleCount() {
+
+    const { count, error } = await supabaseClient
+        .from("doodles")
+        .select("*", {
+            count: "exact",
+            head: true
+        });
+
+    if (error) {
+        console.error("Could not get doodle count:", error);
+        return;
+    }
+
+    const doodleCount = count ?? 0;
+
+    document.getElementById("doodle-count").textContent =
+        String(doodleCount).padStart(5, "0");
+}
 
 
+async function updateVisitorCount() {
+
+    // Get current count
+    const { data, error } = await supabaseClient
+        .from("visitors")
+        .select("visitors")
+        .eq("id", 1)
+        .single();
+
+    if (error) {
+        console.error("Could not get visitor count:", error);
+        return;
+    }
+
+
+    // Increase count by 1
+    const newCount = data.visitors + 1;
+
+
+    // Save new count
+    const { error: updateError } = await supabaseClient
+        .from("visitors")
+        .update({
+            visitors: newCount
+        })
+        .eq("id", 1);
+
+
+    if (updateError) {
+        console.error("Could not update visitor count:", updateError);
+        return;
+    }
+
+
+    // Display it
+    document.getElementById("visitor-count").textContent =
+        String(newCount).padStart(5, "0");
+}
+updateVisitorCount();
+updateDoodleCount();

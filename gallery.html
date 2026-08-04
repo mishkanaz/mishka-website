@@ -1,77 +1,428 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>gallery!</title>
-</head>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<body class="bg-[url('images/blackbg.png')] bg-center bg-fixed bg-repeat h-screen w-full">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <link rel="stylesheet" href="fonts.css">
 
-    <div>
-        <h1 class="text-3xl md:text-5xl font-[GothicByte] tracking-wide  text-white text-center pt-10">welcome to my gallery</h1>
-       
-        <div class="flex items-center justify-center gap-4 w-full pt-4">
-            <div class="w-24 md:w-32 text-center inline-block">
-                <a href="index.html" class="relative flex items-center justify-center hover:scale-105 active:scale-95">
-                    <img src="images/buttonwhite.png" class="w-full h-auto">
-                    <span class="absolute text-white text-l md:text-xl font-[Basis33]">home</span>
-                </a>
-            </div>
-    
-            <div class="w-24 md:w-32 text-center inline-block">
-                <a href="about.html" class="relative flex items-center justify-center hover:scale-105 active:scale-95">
-                    <img src="images/buttonwhite.png" class="w-full h-auto">
-                    <span class="absolute text-white text-l md:text-xl font-[Basis33]">about</span>
-                </a>
-            </div>
-    
-            <div class="w-24 md:w-32 text-center inline-block">
-                <a href="blog.html" class="relative flex items-center justify-center hover:scale-105 active:scale-95">
-                    <img src="images/buttonwhite.png" class="w-full h-auto">
-                    <span class="absolute text-white text-l md:text-xl font-[Basis33]">blog</span>
-                </a>
-            </div>
-        </div>
+</head>
 
-        
-        
-       
-        <div class="md:flex gap-5 flex justify-center flex-wrap">
-            <a href="forcefed.html" class="md:shrink-0">
-                <img class="h-full w-120 object-scale-down md:h-full md:w-140 pt-10"
-                src="art/forcefed.png"
-                />
+
+<body class="
+    bg-[url('images/blackbg.png')]
+    bg-center
+    bg-fixed
+    bg-repeat
+    min-h-screen
+    w-full
+">
+
+
+    <!-- MAIN PAGE CONTAINER -->
+
+    <div class="
+        w-11/12
+        md:w-5/6
+        mx-auto
+        pb-16
+    ">
+
+
+        <!-- TITLE -->
+
+        <h1 class="
+            text-3xl
+            md:text-5xl
+            font-[GothicByte]
+            tracking-wide
+            text-white
+            text-center
+            pt-10
+        ">
+            welcome to my gallery
+        </h1>
+
+
+        <!-- NAVIGATION -->
+
+        <div class="
+            flex
+            items-center
+            justify-center
+            flex-wrap
+            gap-3
+            md:gap-5
+            w-full
+            pt-6
+            pb-10
+        ">
+
+
+            <a
+                href="index.html"
+                class="
+                    relative
+                    flex
+                    items-center
+                    justify-center
+                    w-24
+                    md:w-32
+                    hover:scale-105
+                    active:scale-95
+                    transition-transform
+                "
+            >
+
+                <img
+                    src="images/buttonwhite.png"
+                    class="w-full h-auto"
+                    alt=""
+                >
+
+                <span class="
+                    absolute
+                    text-white
+                    text-sm
+                    md:text-xl
+                    font-[Basis33]
+                ">
+                    home
+                </span>
+
             </a>
 
-            <div class="md:shrink-0">
-                <img class="h-full w-120 object-scale-down md:h-full md:w-140 pt-10"
-                src="art/swallowmyself.png"/>
-            </div>
 
-            <div class="md:shrink-0">
-                <img class="h-full w-120 object-scale-down md:h-full md:w-140 pt-10"
-                src="art/smear.png"/>
-            </div>
+            <a
+                href="about.html"
+                class="
+                    relative
+                    flex
+                    items-center
+                    justify-center
+                    w-24
+                    md:w-32
+                    hover:scale-105
+                    active:scale-95
+                    transition-transform
+                "
+            >
 
-            <div class="md:shrink-0">
-                <img class="h-full w-120 object-scale-down md:h-full md:w-140"
-                src="art/redbloodything.PNG"/>
-            </div>
+                <img
+                    src="images/buttonwhite.png"
+                    class="w-full h-auto"
+                    alt=""
+                >
 
-            <div class="md:shrink-0">
-                <img class="h-full w-120 object-scale-down md:h-full md:w-140"
-                src="art/stimulant.JPG"/>
-            </div>
+                <span class="
+                    absolute
+                    text-white
+                    text-sm
+                    md:text-xl
+                    font-[Basis33]
+                ">
+                    about
+                </span>
 
-            <div class="md:shrink-0">
-                <img class="h-full w-120 object-scale-down md:h-full md:w-140"
-                src="art/selfportrait.png"/>
-            </div>
+            </a>
+
+
+            <a
+                href="blog.html"
+                class="
+                    relative
+                    flex
+                    items-center
+                    justify-center
+                    w-24
+                    md:w-32
+                    hover:scale-105
+                    active:scale-95
+                    transition-transform
+                "
+            >
+
+                <img
+                    src="images/buttonwhite.png"
+                    class="w-full h-auto"
+                    alt=""
+                >
+
+                <span class="
+                    absolute
+                    text-white
+                    text-sm
+                    md:text-xl
+                    font-[Basis33]
+                ">
+                    blog
+                </span>
+
+            </a>
 
         </div>
+
+
+
+        <!-- ART GALLERY -->
+
+        <div class="
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            lg:grid-cols-3
+            gap-6
+            md:gap-8
+        ">
+
+
+            <!-- FORCE FED -->
+
+            <a
+                href="forcefed.html"
+                class="
+                    group
+                    block
+                "
+            >
+
+                <div class="
+                    bg-black/60
+                    border
+                    border-white
+                    p-3
+                    transition-transform
+                    duration-200
+                    group-hover:scale-[1.02]
+                ">
+
+                    <img
+                        src="art/forcefed.png"
+                        class="
+                            w-full
+                            aspect-square
+                            object-cover
+                        "
+                        alt="Force Fed"
+                    >
+
+                    <p class="
+                        text-white
+                        font-[Basis33]
+                        text-center
+                        text-lg
+                        mt-3
+                    ">
+                        force fed
+                    </p>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- SWALLOW MYSELF -->
+
+            <div class="
+                group
+                bg-black/60
+                border
+                border-white
+                p-3
+                transition-transform
+                duration-200
+                hover:scale-[1.02]
+            ">
+
+                <img
+                    src="art/swallowmyself.png"
+                    class="
+                        w-full
+                        aspect-square
+                        object-cover
+                    "
+                    alt="Swallow Myself"
+                >
+
+                <p class="
+                    text-white
+                    font-[Basis33]
+                    text-center
+                    text-lg
+                    mt-3
+                ">
+                    swallow myself
+                </p>
+
+            </div>
+
+
+
+            <!-- SMEAR -->
+
+            <div class="
+                group
+                bg-black/60
+                border
+                border-white
+                p-3
+                transition-transform
+                duration-200
+                hover:scale-[1.02]
+            ">
+
+                <img
+                    src="art/smear.png"
+                    class="
+                        w-full
+                        aspect-square
+                        object-cover
+                    "
+                    alt="Smear"
+                >
+
+                <p class="
+                    text-white
+                    font-[Basis33]
+                    text-center
+                    text-lg
+                    mt-3
+                ">
+                    smear
+                </p>
+
+            </div>
+
+
+
+            <!-- RED BLOODY THING -->
+
+            <div class="
+                group
+                bg-black/60
+                border
+                border-white
+                p-3
+                transition-transform
+                duration-200
+                hover:scale-[1.02]
+            ">
+
+                <img
+                    src="art/redbloodything.PNG"
+                    class="
+                        w-full
+                        aspect-square
+                        object-cover
+                    "
+                    alt="Red Bloody Thing"
+                >
+
+                <p class="
+                    text-white
+                    font-[Basis33]
+                    text-center
+                    text-lg
+                    mt-3
+                ">
+                    red bloody thing
+                </p>
+
+            </div>
+
+
+
+            <!-- STIMULANT -->
+
+            <div class="
+                group
+                bg-black/60
+                border
+                border-white
+                p-3
+                transition-transform
+                duration-200
+                group-hover:scale-[1.02]
+            ">
+
+                <img
+                    src="art/stimulant.JPG"
+                    class="
+                        w-full
+                        aspect-square
+                        object-cover
+                    "
+                    alt="Stimulant"
+                >
+
+                <p class="
+                    text-white
+                    font-[Basis33]
+                    text-center
+                    text-lg
+                    mt-3
+                ">
+                    stimulant
+                </p>
+
+            </div>
+
+
+
+            <!-- SELF PORTRAIT -->
+
+            <div class="
+                group
+                bg-black/60
+                border
+                border-white
+                p-3
+                transition-transform
+                duration-200
+                group-hover:scale-[1.02]
+            ">
+
+                <img
+                    src="art/selfportrait.png"
+                    class="
+                        w-full
+                        aspect-square
+                        object-cover
+                    "
+                    alt="Self Portrait"
+                >
+
+                <p class="
+                    text-white
+                    font-[Basis33]
+                    text-center
+                    text-lg
+                    mt-3
+                ">
+                    self portrait
+                </p>
+
+            </div>
+
+
+        </div>
+
+
     </div>
-    
+
+
 </body>
 </html>
+

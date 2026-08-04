@@ -1,72 +1,715 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>about mishka!</title>
-    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="fonts.css">
+
+    <script src="script.js" defer></script>
+
 </head>
 
 
-<body class="about">
+<body class="
+    bg-[url('images/websitebg.png')]
+    bg-fixed
+    bg-cover
+    bg-center
+    min-h-screen
+    w-full
+">
 
-    <script src="script.js"></script>
 
-    <div class="aboutinterface">
+    <!-- MAIN CONTAINER -->
 
-        <div class = "aboutheader">
-            <h1>about me</h1>
-
-            
-            <div class="clock">
-                <p id="date-time"></p>
-            </div>
-        </div>
-
-        <div class="aboutme">
-            <p>bleh bleh</p>
-        </div>
-
-        <div class="pic">
-           <div class="picofme">
-            <img src="images/picofme.jpg">
-           </div>
-         
-        </div>
-
-        <div class="favgames">
-            <p>top 5 games atm...</p>
-        </div>
-        <div class="favsongs">
-            <p>top 5 songs atm...</p>
-        </div>
-
-        <div class="crochet"></div>
+    <div class="
+        relative
+        w-11/12
+        md:w-5/6
+        mx-auto
+        py-6
         
-        <div class="aboutmenu">
-            <a href="gallery.html" class="button">
-                <img src="images/buttonwhite.png">
-                <span>gallery</span>
+        flex
+        flex-col
+        gap-6
+    ">
+
+
+        <!-- HEADER -->
+
+        <div class="
+            bg-black/50
+            border
+            border-white
+            break-inside-avoid
+            p-6
+
+            flex
+            flex-row
+            justify-between
+            items-center
+        ">
+
+            <h1 class="
+                text-3xl
+                md:text-5xl
+
+                font-[GothicByte]
+                tracking-wide
+                text-white
+            ">
+                about me
+            </h1>
+
+            <div class="
+
+            flex
+            flex-row
+            flex-wrap
+            break-inside-avoid
+            justify-center
+            items-center
+
+            gap-3
+            md:gap-6
+        ">
+
+
+            <!-- GALLERY -->
+
+            <a
+                href="gallery.html"
+                class="
+                    relative
+
+                    flex
+                    items-center
+                    justify-center
+
+                    w-28
+                    md:w-36
+
+                    hover:scale-105
+                    active:scale-95
+
+                    transition-transform
+                "
+            >
+
+                <img
+                    src="images/buttonwhite.png"
+                    class="w-full h-auto"
+                    alt=""
+                >
+
+                <span class="
+                    absolute
+
+                    text-white
+                    text-sm
+                    md:text-xl
+
+                    font-[Basis33]
+                ">
+                    gallery
+                </span>
+
             </a>
-            
-            <a href="index.html" class="button">
-                <img src="images/buttonwhite.png">
-                <span>home</span>
+
+
+
+            <!-- HOME -->
+
+            <a
+                href="index.html"
+                class="
+                    relative
+
+                    flex
+                    items-center
+                    justify-center
+
+                    w-28
+                    md:w-36
+
+                    hover:scale-105
+                    active:scale-95
+
+                    transition-transform
+                "
+            >
+
+                <img
+                    src="images/buttonwhite.png"
+                    class="w-full h-auto"
+                    alt=""
+                >
+
+                <span class="
+                    absolute
+
+                    text-white
+                    text-sm
+                    md:text-xl
+
+                    font-[Basis33]
+                ">
+                    home
+                </span>
+
             </a>
-            
-            <div class="button">
-                <img src="images/buttonwhite.png">
-                <span>blog</span>
-            </div>
-   
+
+
+
+            <!-- BLOG -->
+
+            <a
+                href="blog.html"
+                class="
+                    relative
+
+                    flex
+                    items-center
+                    justify-center
+
+                    w-28
+                    md:w-36
+
+                    hover:scale-105
+                    active:scale-95
+
+                    transition-transform
+                "
+            >
+
+                <img
+                    src="images/buttonwhite.png"
+                    class="w-full h-auto"
+                    alt=""
+                >
+
+                <span class="
+                    absolute
+
+                    text-white
+                    text-sm
+                    md:text-xl
+
+                    font-[Basis33]
+                ">
+                    blog
+                </span>
+
+            </a>
+
+
         </div>
-       
 
 
-
-
-
-    </div>
     
+            <p
+                id="date-time"
+                class="
+                    text-white
+                    font-[Basis33]
+
+                    text-xs
+                    md:text-xl
+
+                    text-right
+                "
+            ></p>
+
+        </div>
+
+
+
+        <!-- MAIN CONTENT -->
+
+        <div class="
+            columns-1
+            md:columns-3
+            gap-6
+
+            items-start
+        ">
+
+
+            <!-- PHOTO -->
+
+            <div class="
+                bg-black/50
+                border
+                border-white
+                break-inside-avoid
+                mb-6
+                p-4
+
+                md:col-span-1
+
+                flex
+                justify-center
+                items-center
+            ">
+
+                <img
+                    src="images/picofme.jpg"
+                    class="
+                        w-full
+                        h-auto
+                        object-cover
+                    "
+                    alt="a picture of Mishka"
+                >
+
+            </div>
+
+
+
+            <!-- ABOUT ME -->
+
+            <div class="
+                bg-black/50
+                border
+                border-white
+                break-inside-avoid
+                mb-6
+                p-6
+
+                md:col-span-2
+
+                min-h-full
+            ">
+
+                <h2 class="
+                    font-[GothicByte]
+                    text-2xl
+                    md:text-3xl
+
+                    text-white
+
+                    mb-4
+                ">
+                    hi!!
+                </h2>
+
+
+                <p class="
+                    text-white
+                    font-[Basis33]
+
+                    text-sm
+                    md:text-lg
+
+                    leading-relaxed
+                ">
+                    my name is mishka, i'm a 3rd year student at the university of british columbia.
+                    i grew up in houston, tx and for a few years my family lived in peterborough, on, when
+                    i was still in elementary. i've been back in houston since 2020 and i like it sort of? 
+                    not enough to stay, off to canada again since 2024! i grew up playing video games with my 
+                    2 older brothers on our xbox 360 and drawing all over printer paper. i would say
+                    im still very much into both of those activities, just in different settings. I explored different 
+                    mediums of art throughout high school and into university as well. There was a brief period that i 
+                    tried to learn how to animate, and i did make one animation...! but stopped there... im currently into using charcoal, 
+                    and growing my fountain pen and pretty ink collection. my favorite pen right now is my twsbi diamond-580 in iceberg with a broad nib.
+                    its currently inked with the sorrowsof young werther by wearingeul. as for gaming, i am very much still into gaming and have built my own pc!
+                    putting everything together was so fun and i'm so glad to finally be able to run more than just minecraft and stardew valley :)
+
+                </p>
+
+            </div>
+
+
+
+            <!-- FAVORITE GAMES -->
+
+            <div class="
+                bg-black/50
+                border
+                border-white
+                break-inside-avoid
+                p-6
+                mb-6
+                md:col-span-1
+
+                min-h-48
+            ">
+
+                <h2 class="
+                    font-[GothicByte]
+                    text-xl
+                    md:text-2xl
+
+                    text-white
+
+                    mb-4
+                ">
+                    top 5 games atm...
+                </h2>
+
+
+                <ol class="
+                    text-white
+                    font-[Basis33]
+
+                    list-decimal
+                    list-inside
+
+                    space-y-2
+                ">
+
+                    <li>cult of the lamb</li>
+                    <li>minecraft</li>
+                    <li>portal 2</li>
+                    <li>the elder scrolls online</li>
+                    <li>GTA V online</li>
+
+                </ol>
+
+            </div>
+
+
+
+            <!-- FAVORITE SONGS -->
+
+            <div class="
+                bg-black/50
+                border
+                border-white
+                break-inside-avoid
+                mb-6
+                p-6
+
+                md:col-span-1
+
+                min-h-48
+            ">
+
+                <h2 class="
+                    font-[GothicByte]
+                    text-xl
+                    md:text-2xl
+
+                    text-white
+
+                    mb-4
+                ">
+                    top 5 songs atm...
+                </h2>
+
+
+                <ol class="
+                    text-white
+                    font-[Basis33]
+
+                    list-decimal
+                    list-inside
+
+                    space-y-2
+                ">
+
+                    <li>missing - flyleaf</li>
+                    <li>broth song - vial</li>
+                    <li>pocket - feeble little horse</li>
+                    <li>letters - acid ghost</li>
+                    <li>weird girl - mommy long legs</li>
+
+                </ol>
+
+            </div>
+
+
+
+            <!-- CROCHET -->
+
+            <div class="
+                bg-black/50
+                border
+                border-white
+                break-inside-avoid
+                mb-6
+                p-6
+
+                md:col-span-1
+
+                min-h-48
+
+                flex
+                flex-col
+                items-center
+                justify-center
+            ">
+            <div class="w-1/2 h-auto">
+                <img src="images/vincent.png">
+            </div>
+                <p class="
+                    text-white
+                    font-[Basis33]
+                    text-left
+                    
+                ">
+                    i also love to crochet! its one of my favorite 
+                    pastimes. this is vincent the fox. he was incredibly
+                    annoying to crochet since i absolutely had to pick
+                    the fluffiest yarn possible. photo taken by my
+                    amazing photographer friend! check out their 
+                    photography!
+                </p>
+                <a class="relative
+
+                flex
+                items-center
+                justify-center
+
+                w-25
+                md:w-25
+
+                hover:scale-105
+                active:scale-95
+
+                transition-transform" href="https://youmademerealise.com/" target="_blank" class="linkbutton">
+                    <img src="images/buttonwhite.png">
+                    <span class=" absolute
+
+                    text-white
+                    text-sm
+                    md:text-md
+
+                    font-[Basis33]">hell yeah</span>
+                    
+                </a>
+
+            </div>
+            <div class="
+                bg-black/50
+                border
+                border-white
+                break-inside-avoid
+                mb-6
+                p-6
+
+                md:col-span-1
+
+                min-h-48
+
+                flex
+                flex-col
+                items-center
+                justify-center
+            ">
+            <a class="relative
+
+                flex
+                items-center
+                justify-center
+
+                w-25
+                md:w-25
+
+                hover:scale-105
+                active:scale-95
+
+                transition-transform" href="https://www.instagram.com/mishkanazarani?utm_source=qr" target="_blank" class="linkbutton">
+                    <img src="images/buttonwhite.png">
+                    <span class=" absolute
+
+                    text-white
+                    text-sm
+                    md:text-md
+
+                    font-[Basis33]">instagram</span>
+                    
+                </a>
+                <a class="relative
+
+                flex
+                items-center
+                justify-center
+
+                w-25
+                md:w-25
+
+                hover:scale-105
+                active:scale-95
+
+                transition-transform" href="https://steamcommunity.com/profiles/76561198220196171/" target="_blank" class="linkbutton">
+                    <img src="images/buttonwhite.png">
+                    <span class=" absolute
+
+                    text-white
+                    text-sm
+                    md:text-md
+
+                    font-[Basis33]">steam</span>
+                    
+                </a>
+                <a class="relative
+
+                flex
+                items-center
+                justify-center
+
+                w-25
+                md:w-25
+
+                hover:scale-105
+                active:scale-95
+
+                transition-transform" href="https://www.tiktok.com/@mishkaamira?_r=1&_t=ZT-98bxcxE51Vl" target="_blank" class="linkbutton">
+                    <img src="images/buttonwhite.png">
+                    <span class=" absolute
+
+                    text-white
+                    text-sm
+                    md:text-md
+
+                    font-[Basis33]">tiktok</span>
+                    
+                </a>
+                <a class="relative
+
+                flex
+                items-center
+                justify-center
+
+                w-25
+                md:w-25
+
+                hover:scale-105
+                active:scale-95
+
+                transition-transform" href="https://discord.gg/vFZ4CpQu" target="_blank" class="linkbutton">
+                    <img src="images/buttonwhite.png">
+                    <span class=" absolute
+
+                    text-white
+                    text-sm
+                    md:text-md
+
+                    font-[Basis33]">discord</span>
+                    
+                </a>
+                
+                
+
+            </div>
+
+            
+            <div class="
+                bg-black/50
+                border
+                border-white
+                break-inside-avoid
+                mb-6
+                p-6
+
+                md:col-span-1
+
+                min-h-48
+            ">
+
+                <h2 class="
+                    font-[GothicByte]
+                    text-xl
+                    md:text-2xl
+
+                    text-white
+
+                    mb-4
+                ">
+                    my pc specs !!
+                </h2>
+
+
+                <ol class="
+                    text-white
+                    font-[Basis33]
+
+                    list-decimal
+                    list-inside
+
+                    space-y-2
+                ">
+
+                    <li>amd ryzen 5 7600x</li>
+                    <li>zotac geforce rtx 3060 12gb</li>
+                    <li>16gb (2 x 8gb) ram</li>
+                    <li>msi pro b650-s wifi atx am5</li>
+                    <li>1tb ssd</li>
+                    
+                    
+
+                </ol>
+
+                <div class="break-inside-avoid mb-6">
+                    <img class="" src="images/pcsetup.png">
+                </div>
+                <p class="text-white text-sm font-[Basis33]">okay so this is somehow the only pic i have rn..... will have to take a better one once im back!
+                    and you bet i was low-balling people's dads on fb marketplace for the 27" curved full hd asus monitor + arm :3
+                </p>
+            </div>
+            <div class="bg-black/50 border border-white md:col-span-1 flex flex-col items-center justify-center min-h-48 break-inside-avoid mb-6">
+                <img class="w-1/2" src="images/mecrocheting.png">
+                <p class="text-sm text-white font-[Basis33]">the yarn ALWAYS comes with</p>
+            </div>
+
+            
+            <div class="
+                bg-black/50
+                border
+                border-white
+                break-inside-avoid
+                mb-6
+                p-6
+
+                md:col-span-1
+
+                min-h-48
+
+                flex
+                flex-col
+                items-center
+                justify-center
+            ">
+            <div class="w-1/2 h-auto">
+                <img src="images/desikyra.png">
+            </div>
+                <p class="
+                    text-white
+                    font-[Basis33]
+                    text-left
+                    
+                ">
+                    this is my BABY, kyra. she is my sweet girl that loves drinking lassi
+                    and getting belly rubs. she's been with us since she was a tiny puppy and is now 
+                    7 years old. my middle aged baby. i love her so much. 
+                </p>
+                
+
+            </div>
+
+            
+
+        </div>
+
+        
+
+      
+
+        </div>
+
+
 </body>
 </html>
