@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>doodles!</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="fonts.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="doodles.js" defer></script>
+
+</head>
+
+
+<body class="
+    bg-[url('images/websitebg.png')]
+    bg-fixed
+    bg-cover
+    bg-center
+    min-h-screen
+    w-full
+">
+
+
+    <div class="
+        w-11/12
+        md:w-5/6
+        mx-auto
+        py-6
+    ">
+
+        <h1 class="
+            text-white
+            font-[GothicByte]
+            text-4xl
+            text-center
+            mb-8
+        ">
+            ♡ visitor doodles ♡
+        </h1>
+
+        <a
+        href="index.html"
+        class="
+            relative
+            w-30
+            flex
+            items-center
+            justify-center
+    
+            hover:scale-105
+            active:scale-95
+            transition-transform
+        "
+    >
+        <img
+            src="images/buttonwhite.png"
+            class="w-full h-auto"
+            alt=""
+        >
+    
+        <span class="
+            absolute
+            text-white
+            text-sm
+            md:text-xl
+            font-[Basis33]
+        ">
+            back
+        </span>
+    </a>
+        <div
+            id="doodleGallery"
+            class="
+                grid
+                grid-cols-2
+                md:grid-cols-3
+                gap-6
+            "
+        >
+
+        </div>
+
+    </div>
+
+   
+
+</body>
+
+</html>

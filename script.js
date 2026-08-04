@@ -66,3 +66,261 @@ window.addEventListener("load", () => {
         
     };
   });
+
+  const canvas = document.getElementById("drawingCanvas");
+  const ctx = canvas.getContext("2d");
+  
+  const clearButton = document.getElementById("clearButton");
+  const submitButton = document.getElementById("submitButton");
+  
+  let drawing = false;
+  
+  ctx.lineWidth = 4;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  ctx.strokeStyle = "black";
+  
+  
+  canvas.addEventListener("pointerdown", startDrawing);
+  canvas.addEventListener("pointermove", draw);
+  canvas.addEventListener("pointerup", stopDrawing);
+  canvas.addEventListener("pointerleave", stopDrawing);
+  
+  
+  function getPosition(event) {
+  
+      const rect = canvas.getBoundingClientRect();
+  
+      return {
+          x: (event.clientX - rect.left) * (canvas.width / rect.width),
+          y: (event.clientY - rect.top) * (canvas.height / rect.height)
+      };
+  
+  }
+  
+  
+  function startDrawing(event) {
+  
+      drawing = true;
+  
+      const position = getPosition(event);
+  
+      ctx.beginPath();
+      ctx.moveTo(position.x, position.y);
+  
+  }
+  
+  
+  function draw(event) {
+  
+      if (!drawing) {
+          return;
+      }
+  
+      const position = getPosition(event);
+  
+      ctx.lineTo(position.x, position.y);
+      ctx.stroke();
+  
+  }
+  
+  
+  function stopDrawing() {
+  
+      drawing = false;
+      ctx.beginPath();
+  
+  }
+  
+  
+  clearButton.addEventListener("click", function() {
+  
+      ctx.clearRect(
+          0,
+          0,
+          canvas.width,
+          canvas.height
+      );
+  
+  });
+
+  
+
+
+const SUPABASE_URL = "https://satmvyxotlghtrqmvicb.supabase.co";
+const SUPABASE_KEY = "sb_publishable_C8iBx4egDtEn5yeSzM_DWA_ksC94fYe";
+
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+
+submitButton.addEventListener("click", async function() {
+
+    console.log("submit clicked!");
+
+    const imageBlob = await new Promise(function(resolve) {
+        canvas.toBlob(resolve, "image/png");
+    });
+
+    const fileName = `${Date.now()}-${crypto.randomUUID()}.png`;
+
+
+    // Upload image to Supabase Storage
+
+    const { error: uploadError } =
+        await supabaseClient.storage
+            .from("drawings")
+            .upload(fileName, imageBlob, {
+                contentType: "image/png"
+            });
+
+
+    if (uploadError) {
+
+        console.error("Upload error:", uploadError);
+
+        alert("something went wrong uploading your doodle :(");
+
+        return;
+    }
+
+
+    // Get public URL
+
+    const { data } =
+        supabaseClient.storage
+            .from("drawings")
+            .getPublicUrl(fileName);
+
+
+    // Save URL to database
+
+    const { error: databaseError } =
+        await supabaseClient
+            .from("drawings")
+            .insert([
+                {
+                    image_url: data.publicUrl
+                }
+            ]);
+
+
+    if (databaseError) {
+
+        console.error("Database error:", databaseError);
+
+        alert("your drawing uploaded, but something went wrong saving it :(");
+
+        return;
+    }
+
+
+    alert("your doodle has been added!! ♡");
+
+});
+
+const chatMessages = document.getElementById("chatMessages");
+const usernameInput = document.getElementById("usernameInput");
+const messageInput = document.getElementById("messageInput");
+const sendMessageButton = document.getElementById("sendMessageButton");
+
+
+// LOAD MESSAGES
+
+async function loadMessages() {
+
+    const { data, error } = await supabaseClient
+        .from("chat_messages")
+        .select("*")
+        .order("created_at", { ascending: true });
+
+
+    if (error) {
+
+        console.error("Could not load messages:", error);
+
+        return;
+    }
+
+
+    chatMessages.innerHTML = "";
+
+
+    data.forEach(function(message) {
+
+        const messageElement = document.createElement("p");
+
+        messageElement.classList.add("mb-2");
+
+        messageElement.textContent =
+            `${message.username}: ${message.message}`;
+
+        chatMessages.appendChild(messageElement);
+
+    });
+
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+
+
+// SEND MESSAGE
+
+async function sendMessage() {
+
+    const username = usernameInput.value.trim();
+    const message = messageInput.value.trim();
+
+
+    if (username === "" || message === "") {
+
+        return;
+
+    }
+
+
+    const { error } = await supabaseClient
+        .from("chat_messages")
+        .insert([
+            {
+                username: username,
+                message: message
+            }
+        ]);
+
+
+    if (error) {
+
+        console.error("Could not send message:", error);
+
+        return;
+
+    }
+
+
+    messageInput.value = "";
+
+    loadMessages();
+
+}
+
+
+
+// SEND BUTTON
+
+sendMessageButton.addEventListener(
+    "click",
+    sendMessage
+);
+
+
+
+// LOAD CHAT WHEN PAGE OPENS
+
+loadMessages();
+
+
+
