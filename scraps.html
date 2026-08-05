@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>scrapbook!</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<link rel="stylesheet" href="fonts.css">
+
+
+</head>
+
+<body class="
+    bg-[url('images/websitebg.png')]
+    bg-fixed
+    bg-cover
+    bg-center
+    min-h-screen
+    w-full
+">
+
+
+<!-- MAIN PAGE -->
+
+<div class="
+    w-11/12
+    md:w-5/6
+    mx-auto
+    py-8
+">
+
+
+    <!-- HEADER -->
+
+    <div class="
+        bg-black/50
+        border
+        border-white
+        p-6
+        mb-6
+
+        flex
+        flex-col
+        md:flex-row
+
+        items-center
+        justify-between
+
+        gap-4
+    ">
+
+        <h1 class="
+            text-white
+            font-[GothicByte]
+            text-3xl
+            md:text-5xl
+            tracking-wide
+        ">
+            scraps that didn't make it to the gallery
+        </h1>
+
+        <p class="
+            text-white
+            font-[Basis33]
+            text-sm
+            md:text-lg
+            rotate-2
+        ">
+            random things i've made 
+        </p>
+
+    </div>
+
+
+
+    <!-- NAVIGATION -->
+
+    <div class="
+        flex
+        flex-wrap
+        justify-center
+        gap-4
+        mb-10
+    ">
+
+        <a
+            href="index.html"
+            class="
+                relative
+                w-24
+                md:w-32
+
+                hover:scale-105
+                active:scale-95
+                transition-transform
+            "
+        >
+
+            <img
+                src="images/buttonwhite.png"
+                class="w-full h-auto"
+                alt=""
+            >
+
+            <span class="
+                absolute
+                inset-0
+
+                flex
+                items-center
+                justify-center
+
+                text-white
+                font-[Basis33]
+                text-sm
+                md:text-lg
+            ">
+                home
+            </span>
+
+        </a>
+
+
+        <a
+            href="gallery.html"
+            class="
+                relative
+                w-24
+                md:w-32
+
+                hover:scale-105
+                active:scale-95
+                transition-transform
+            "
+        >
+
+            <img
+                src="images/buttonwhite.png"
+                class="w-full h-auto"
+                alt=""
+            >
+
+            <span class="
+                absolute
+                inset-0
+
+                flex
+                items-center
+                justify-center
+
+                text-white
+                font-[Basis33]
+                text-sm
+                md:text-lg
+            ">
+                gallery
+            </span>
+
+        </a>
+
+
+        <a
+            href="about.html"
+            class="
+                relative
+                w-24
+                md:w-32
+
+                hover:scale-105
+                active:scale-95
+                transition-transform
+            "
+        >
+
+            <img
+                src="images/buttonwhite.png"
+                class="w-full h-auto"
+                alt=""
+            >
+
+            <span class="
+                absolute
+                inset-0
+
+                flex
+                items-center
+                justify-center
+
+                text-white
+                font-[Basis33]
+                text-sm
+                md:text-lg
+            ">
+                about
+            </span>
+
+        </a>
+
+    </div>
+
+
+
+    <!-- SCRAPBOOK -->
+
+    <div class="
+        relative
+
+        bg-[url('images/wornpaper.jpg')]
+        
+        bg-repeat
+
+        min-h-[1000px]
+
+        p-6
+        md:p-12
+
+        overflow-hidden
+
+        shadow-2xl
+    ">
+
+
+        <!-- LITTLE BACKGROUND DOODLES -->
+
+        <div class="
+            absolute
+            top-8
+            left-8
+
+            text-4xl
+
+            rotate-12
+
+            opacity-70
+        ">
+            ☆
+        </div>
+
+
+        <div class="
+            absolute
+            top-32
+            right-10
+
+            text-3xl
+
+            -rotate-12
+
+            opacity-60
+        ">
+            ♡
+        </div>
+
+
+        <div class="
+            absolute
+            bottom-20
+            left-10
+
+            text-3xl
+
+            rotate-6
+
+            opacity-60
+        ">
+            ✦
+        </div>
+
+
+        <div class="
+            absolute
+            bottom-40
+            right-12
+
+            text-4xl
+
+            -rotate-6
+
+            opacity-70
+        ">
+            ☆
+        </div>
+
+
+
+        <!-- SCRAPBOOK PIECES -->
+
+        <div class="
+            flex
+            flex-wrap
+
+            items-center
+            justify-center
+
+            gap-12
+            md:gap-16
+        ">
+
+
+            <!-- DOODLE 1 -->
+
+            <div class="
+                relative
+                w-48
+                md:w-60
+
+                bg-white
+                p-3
+
+                shadow-xl
+
+                rotate-3
+
+                hover:rotate-0
+                hover:scale-105
+
+                transition-transform
+                duration-300
+            ">
+
+                <!-- TAPE -->
+
+                <div class="
+                    absolute
+                    -top-4
+                    left-1/2
+                    -translate-x-1/2
+
+                    w-20
+                    h-6
+
+                    bg-white/60
+
+                    rotate-2
+
+                    z-10
+                "></div>
+
+
+                <img
+                    src="art/doodle1.png"
+                    class="w-full h-auto"
+                    alt="doodle"
+                >
+
+                <p class="
+                    text-black
+                    font-[Basis33]
+                    text-center
+                    mt-3
+                    text-sm
+                ">
+                    poo
+                </p>
+
+            </div>
+
+
+
+            <!-- NOTE -->
+
+            <div class="
+                relative
+
+                w-48
+                md:w-56
+
+                bg-yellow-100
+
+                p-6
+
+                shadow-xl
+
+                -rotate-6
+
+                hover:rotate-0
+                hover:scale-105
+
+                transition-transform
+                duration-300
+            ">
+
+                <p class="
+                    text-black
+                    font-[Basis33]
+                    text-lg
+                    leading-relaxed
+                ">
+                    ppoo
+                    <br><br>
+                    poo
+                </p>
+
+                <p class="
+                    text-black
+                    font-[Basis33]
+                    text-xs
+                    mt-4
+                    text-right
+                ">
+                    — me
+                </p>
+
+            </div>
+
+
+
+            <!-- DOODLE 2 -->
+
+            <div class="
+                relative
+                w-40
+                md:w-52
+
+                bg-white
+                p-3
+
+                shadow-xl
+
+                rotate-6
+
+                hover:rotate-0
+                hover:scale-105
+
+                transition-transform
+                duration-300
+            ">
+
+                <div class="
+                    absolute
+                    -top-3
+                    right-6
+
+                    w-16
+                    h-5
+
+                    bg-white/60
+
+                    -rotate-6
+                "></div>
+
+
+                <img
+                    src="art/doodle2.png"
+                    class="w-full h-auto"
+                    alt="doodle"
+                >
+
+            </div>
+
+
+
+            <!-- LITTLE NOTE -->
+
+            
+
+
+
+            <!-- BIG DOODLE -->
+
+            <div class="
+                relative
+
+                w-64
+                md:w-80
+
+                bg-white
+
+                p-4
+
+                shadow-2xl
+
+                -rotate-2
+
+                hover:rotate-0
+                hover:scale-105
+
+                transition-transform
+                duration-300
+            ">
+
+                <div class="
+                    absolute
+                    -top-3
+                    left-8
+
+                    w-24
+                    h-6
+
+                    bg-white/60
+
+                    rotate-3
+                "></div>
+
+
+                <img
+                    src="art/doodle3.png"
+                    class="w-full h-auto"
+                    alt="doodle"
+                >
+
+                <p class="
+                    text-black
+                    font-[Basis33]
+                    mt-3
+                    text-center
+                ">
+                    poopoo
+                </p>
+
+            </div>
+
+
+
+            <!-- PHOTO / IMAGE -->
+
+            <div class="
+                relative
+
+                w-44
+                md:w-52
+
+                bg-white
+
+                p-3
+
+                shadow-xl
+
+                rotate-5
+
+                hover:rotate-0
+                hover:scale-105
+
+                transition-transform
+                duration-300
+            ">
+
+                <img
+                    src="images/picofme.jpg"
+                    class="w-full h-auto"
+                    alt="photo"
+                >
+
+                <p class="
+                    text-black
+                    font-[Basis33]
+                    text-center
+                    mt-2
+                    text-sm
+                ">
+                    me!!
+                </p>
+
+            </div>
+
+
+
+            <!-- RANDOM SCRAP -->
+
+            <div class="
+                relative
+
+                w-40
+
+                bg-[#f5f1e8]
+
+                p-5
+
+                shadow-lg
+
+                -rotate-4
+
+                hover:rotate-2
+                hover:scale-105
+
+                transition-transform
+                duration-300
+            ">
+
+                <p class="
+                    text-black
+                    font-[Basis33]
+                    text-center
+                    text-xl
+                ">
+                    ??????
+                </p>
+
+                <p class="
+                    text-black
+                    font-[Basis33]
+                    text-center
+                    text-sm
+                    mt-3
+                ">
+                    poo
+                </p>
+
+            </div>
+
+
+
+            <!-- DOODLE 4 -->
+
+            <div class="
+                relative
+
+                w-48
+                md:w-60
+
+                bg-white
+
+                p-3
+
+                shadow-xl
+
+                rotate-3
+
+                hover:rotate-0
+                hover:scale-105
+
+                transition-transform
+                duration-300
+            ">
+
+                <div class="
+                    absolute
+                    -top-4
+                    right-10
+
+                    w-20
+                    h-6
+
+                    bg-white/60
+
+                    -rotate-3
+                "></div>
+
+
+                <img
+                    src="art/doodle4.png"
+                    class="w-full h-auto"
+                    alt="doodle"
+                >
+
+            </div>
+
+
+
+            <!-- HANDWRITTEN MESSAGE -->
+
+            <div class="
+                w-52
+
+                p-6
+
+                bg-blue-100
+
+                shadow-xl
+
+                rotate-6
+
+                hover:rotate-0
+                hover:scale-105
+
+                transition-transform
+                duration-300
+            ">
+
+                <p class="
+                    text-black
+                    font-[Basis33]
+                    text-center
+                    text-lg
+                ">
+                    ok
+                </p>
+
+                <p class="
+                    text-black
+                    font-[Basis33]
+                    text-center
+                    text-xs
+                    mt-4
+                ">
+                    worth it
+                </p>
+
+            </div>
+
+
+
+        </div>
+
+
+        <!-- BOTTOM TEXT -->
+
+        <div class="
+            mt-20
+            text-center
+            rotate-2
+        ">
+
+            <p class="
+                text-black
+                font-[Basis33]
+                text-lg
+            ">
+                poo
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+   
+
+</div>
+
+
+</body>
+</html>
