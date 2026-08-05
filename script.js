@@ -171,7 +171,7 @@ submitButton.addEventListener("click", async function() {
 
     const { error: uploadError } =
         await supabaseClient.storage
-            .from("doodles")
+            .from("drawings")
             .upload(fileName, imageBlob, {
                 contentType: "image/png"
             });
@@ -191,7 +191,7 @@ submitButton.addEventListener("click", async function() {
 
     const { data } =
         supabaseClient.storage
-            .from("doodles")
+            .from("drawings")
             .getPublicUrl(fileName);
 
 
@@ -338,7 +338,7 @@ loadMessages();
 async function updateDoodleCount() {
 
     const { count, error } = await supabaseClient
-        .from("doodles")
+        .from("drawings")
         .select("*", {
             count: "exact",
             head: true
