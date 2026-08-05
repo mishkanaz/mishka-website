@@ -338,7 +338,7 @@ loadMessages();
 async function updateDoodleCount() {
 
     const { count, error } = await supabaseClient
-        .from("drawings")
+        .from("doodles")
         .select("*", {
             count: "exact",
             head: true
