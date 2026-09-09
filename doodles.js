@@ -50,7 +50,7 @@ async function loadDoodles() {
 
          const name = document.createElement("p");
 
-    name.textContent = `created by: ${doodle.username}`;
+    name.textContent = `created by: ${doodle.username ?? anonymous}`;
 
     name.classList.add(
         "text-white",
