@@ -28,40 +28,53 @@ async function loadDoodles() {
     }
 
 
-    data.forEach(function(drawing) {
+  data.forEach(function(drawing) {
 
-        const image = document.createElement("img");
+    const doodleDiv = document.createElement("div");
 
-        image.src = drawing.image_url;
-
-        image.className = `
-            w-full
-            h-auto
-            border
-            border-white
-            bg-white
-            p-2
-        `;
-
-        image.alt = "visitor doodle";
+    doodleDiv.className = `
+        flex
+        flex-col
+        items-center
+    `;
 
 
-        gallery.appendChild(image);
+    const image = document.createElement("img");
 
-         const name = document.createElement("p");
+    image.src = drawing.image_url;
 
-    name.textContent = `created by: ${drawing.username ?? anonymous}`;
+    image.className = `
+        w-full
+        h-auto
+        border
+        border-white
+        bg-white
+        p-2
+    `;
 
-    name.classList.add(
-        "text-white",
-        "font-[Basis33]",
-        "text-center",
-        "mt-2"
-    );
+    image.alt = "visitor doodle";
 
-gallery.appendChild(name);
+    doodleDiv.appendChild(image);
 
-    });
+
+    const name = document.createElement("p");
+
+    name.textContent =
+        `created by: ${drawing.username ?? "anonymous"}`;
+
+    name.className = `
+        text-white
+        font-[Basis33]
+        text-center
+        mt-2
+    `;
+
+    doodleDiv.appendChild(name);
+
+
+    gallery.appendChild(doodleDiv);
+
+});
 
    
 
