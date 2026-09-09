@@ -48,9 +48,7 @@ async function loadDoodles() {
 
         gallery.appendChild(image);
 
-    });
-
-    const name = document.createElement("p");
+         const name = document.createElement("p");
 
     name.textContent = `created by: ${doodle.username}`;
 
@@ -62,6 +60,10 @@ async function loadDoodles() {
     );
 
 doodleDiv.appendChild(name);
+
+    });
+
+   
 
 }
 
