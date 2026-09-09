@@ -72,7 +72,10 @@ window.addEventListener("load", () => {
   
   const clearButton = document.getElementById("clearButton");
   const submitButton = document.getElementById("submitButton");
+  const username = document.getElementById("username");
   
+
+
   let drawing = false;
   
   ctx.lineWidth = 4;
@@ -165,14 +168,17 @@ submitButton.addEventListener("click", async function() {
     });
 
     const fileName = `${Date.now()}-${crypto.randomUUID()}.png`;
+    const username = username.value.trim();
 
+
+    
 
     // Upload image to Supabase Storage
 
     const { error: uploadError } =
         await supabaseClient.storage
             .from("drawings")
-            .upload(fileName, imageBlob, {
+            .upload(fileName, imageBlob,{
                 contentType: "image/png"
             });
 
@@ -202,7 +208,9 @@ submitButton.addEventListener("click", async function() {
             .from("doodles")
             .insert([
                 {
-                    image_url: data.publicUrl
+                    image_url: data.publicUrl,
+                    username: username
+                    
                 }
             ]);
 
