@@ -51,7 +51,7 @@ window.addEventListener("load", () => {
     }
   });
 
-  const audio = document.getElementById("dogsong2");
+  const audio = document.getElementById("songoftheweek");
   const playbutton = document.getElementById("playbtn");
   const playtext = document.getElementById("playtext");
 
