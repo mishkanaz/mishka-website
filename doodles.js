@@ -50,6 +50,19 @@ async function loadDoodles() {
 
     });
 
+    const name = document.createElement("p");
+
+    name.textContent = `created by: ${doodle.username}`;
+
+    name.classList.add(
+        "text-white",
+        "font-[Basis33]",
+        "text-center",
+        "mt-2"
+    );
+
+doodleDiv.appendChild(name);
+
 }
 
 
