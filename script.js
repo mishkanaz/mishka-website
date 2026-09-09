@@ -168,7 +168,7 @@ submitButton.addEventListener("click", async function() {
     });
 
     const fileName = `${Date.now()}-${crypto.randomUUID()}.png`;
-    const username = username.value.trim();
+    const usernameValue = username.value.trim();
 
 
     
@@ -180,7 +180,9 @@ submitButton.addEventListener("click", async function() {
             .from("drawings")
             .upload(fileName, imageBlob,{
                 contentType: "image/png"
-            });
+            })
+            
+           
 
 
     if (uploadError) {
@@ -209,7 +211,7 @@ submitButton.addEventListener("click", async function() {
             .insert([
                 {
                     image_url: data.publicUrl,
-                    username: username
+                    username: usernameValue
                     
                 }
             ]);
