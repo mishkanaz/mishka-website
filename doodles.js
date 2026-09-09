@@ -59,7 +59,7 @@ async function loadDoodles() {
         "mt-2"
     );
 
-doodleDiv.appendChild(name);
+gallery.appendChild(name);
 
     });
 
