@@ -437,7 +437,13 @@
                     flex-col
                     items-center
                 ">
-
+                <div class="
+                        flex
+                        justify-center
+                        gap-2
+                        md:gap-8
+                        mt-4
+                    ">
                     <h2 class="
                         font-[GothicByte]
                         text-3xl
@@ -448,7 +454,7 @@
                         doodle here!
                     </h2>
 
-
+                   </div>
                     <canvas
                         id="drawingCanvas"
                         width="600"
@@ -478,15 +484,16 @@
                         md:gap-4
                         mt-4
                     ">
-
-                                          <input
+                     <input
         id="username"
         type="text"
         maxlength="30"
         placeholder="your name..."
         class="
+            relative
             mt-4
-            w-30
+            w-15
+            md:w-30
             p-2
 
             bg-black/50
@@ -497,6 +504,7 @@
             font-[Basis33]
         "
     >
+                                          
 
                         <div
                             id="clearButton"
