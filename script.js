@@ -295,23 +295,18 @@ async function sendMessage() {
     }
 
 
-    const { error } = await supabaseClient
-        .from("chat_messages")
-        .insert([
-            {
-                username: username,
-                message: message
-            }
-        ]);
+    const { data, error } =
+    await supabaseClient.functions.invoke("send-chat", {
+        body: {
+            username: username,
+            message: message
+        }
+    });
 
-
-    if (error) {
-
-        console.error("Could not send message:", error);
-
-        return;
-
-    }
+if (error) {
+    console.error("Could not send message:", error);
+    return;
+}
 
 
     messageInput.value = "";
