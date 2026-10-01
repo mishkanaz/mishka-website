@@ -205,16 +205,27 @@ submitButton.addEventListener("click", async function() {
 
     // Save URL to database
 
-    const { error: databaseError } =
-        await supabaseClient
-            .from("doodles")
-            .insert([
-                {
-                    image_url: data.publicUrl,
-                    username: usernameValue
-                    
-                }
-            ]);
+  // Save URL and IP through Edge Function
+
+const { data: functionData, error: functionError } =
+    await supabaseClient.functions.invoke("save-doodle", {
+        body: {
+            image_url: data.publicUrl,
+            username: usernameValue
+        }
+    });
+
+console.log("DOODLE FUNCTION DATA:", functionData);
+console.log("DOODLE FUNCTION ERROR:", functionError);
+
+if (functionError) {
+
+    console.error("Could not save doodle:", functionError);
+
+    alert("your drawing uploaded, but something went wrong saving it :(");
+
+    return;
+}
 
 
     if (databaseError) {
