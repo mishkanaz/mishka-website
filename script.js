@@ -294,35 +294,34 @@ messageElement.textContent =
 
 async function sendMessage() {
 
+    console.log("SEND BUTTON CLICKED");
+
     const username = usernameInput.value.trim();
     const message = messageInput.value.trim();
 
-
     if (username === "" || message === "") {
-
         return;
-
     }
 
-
     const { data, error } =
-    await supabaseClient.functions.invoke("send-chat", {
-        body: {
-            username: username,
-            message: message
-        }
-    });
+        await supabaseClient.functions.invoke("send-chat", {
+            body: {
+                username: username,
+                message: message
+            }
+        });
 
-if (error) {
-    console.error("Could not send message:", error);
-    return;
-}
+    console.log("FUNCTION DATA:", data);
+    console.log("FUNCTION ERROR:", error);
 
+    if (error) {
+        console.error("Could not send message:", error);
+        return;
+    }
 
     messageInput.value = "";
 
     loadMessages();
-
 }
 
 
