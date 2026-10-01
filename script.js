@@ -301,16 +301,16 @@ async function sendMessage() {
         return;
     }
 
-
-    const { error } = await supabaseClient
-        .from("chat_messages")
-        .insert([
-            {
+    const { data, error } =
+        await supabaseClient.functions.invoke("super-processor", {
+            body: {
                 username: username,
                 message: message
             }
-        ]);
+        });
 
+    console.log("FUNCTION DATA:", data);
+    console.log("FUNCTION ERROR:", error);
 
     if (error) {
         console.error("Could not send message:", error);
@@ -318,9 +318,9 @@ async function sendMessage() {
     }
 
     messageInput.value = "";
+
     loadMessages();
 }
-
 
 
 // SEND BUTTON
