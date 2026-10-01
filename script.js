@@ -175,7 +175,7 @@ submitButton.addEventListener("click", async function() {
     
 
     // Upload image to Supabase Storage
-const { data: functionData, error: functionError } =
+
     await supabaseClient.functions.invoke("save-doodle", {
         body: {
             image_url: data.publicUrl,
