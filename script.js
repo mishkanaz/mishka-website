@@ -162,6 +162,7 @@ const supabaseClient = supabase.createClient(
 submitButton.addEventListener("click", async function() {
 
     console.log("submit clicked!");
+    
 
     const imageBlob = await new Promise(function(resolve) {
         canvas.toBlob(resolve, "image/png");
@@ -174,26 +175,22 @@ submitButton.addEventListener("click", async function() {
     
 
     // Upload image to Supabase Storage
+const { data: functionData, error: functionError } =
+    await supabaseClient.functions.invoke("save-doodle", {
+        body: {
+            image_url: data.publicUrl,
+            username: usernameValue
+        }
+    });
 
-    const { error: uploadError } =
-        await supabaseClient.storage
-            .from("drawings")
-            .upload(fileName, imageBlob,{
-                contentType: "image/png"
-            })
-            
-           
+console.log("SAVE-DOODLE DATA:", functionData);
+console.log("SAVE-DOODLE ERROR:", functionError);
 
-
-    if (uploadError) {
-
-        console.error("Upload error:", uploadError);
-
-        alert("something went wrong uploading your doodle :(");
-
-        return;
-    }
-
+if (functionError) {
+    console.error("Could not save doodle:", functionError);
+    alert("your drawing uploaded, but something went wrong saving it :(");
+    return;
+}
 
     // Get public URL
 
