@@ -176,6 +176,37 @@ submitButton.addEventListener("click", async function() {
 
     // Upload image to Supabase Storage
 
+    const { error: uploadError } =
+        await supabaseClient.storage
+            .from("drawings")
+            .upload(fileName, imageBlob,{
+                contentType: "image/png"
+            })
+            
+           
+
+
+    if (uploadError) {
+
+        console.error("Upload error:", uploadError);
+
+        alert("something went wrong uploading your doodle :(");
+
+        return;
+    }
+
+
+// Get public URL
+
+const { data } =
+    supabaseClient.storage
+        .from("drawings")
+        .getPublicUrl(fileName);
+
+
+// Save URL and IP through Edge Function
+
+const { data: functionData, error: functionError } =
     await supabaseClient.functions.invoke("save-doodle", {
         body: {
             image_url: data.publicUrl,
@@ -186,34 +217,6 @@ submitButton.addEventListener("click", async function() {
 console.log("SAVE-DOODLE DATA:", functionData);
 console.log("SAVE-DOODLE ERROR:", functionError);
 
-if (functionError) {
-    console.error("Could not save doodle:", functionError);
-    alert("your drawing uploaded, but something went wrong saving it :(");
-    return;
-}
-
-    // Get public URL
-
-    const { data } =
-        supabaseClient.storage
-            .from("drawings")
-            .getPublicUrl(fileName);
-
-
-    // Save URL to database
-
-  // Save URL and IP through Edge Function
-
-const { data: functionData, error: functionError } =
-    await supabaseClient.functions.invoke("save-doodle", {
-        body: {
-            image_url: data.publicUrl,
-            username: usernameValue
-        }
-    });
-
-console.log("DOODLE FUNCTION DATA:", functionData);
-console.log("DOODLE FUNCTION ERROR:", functionError);
 
 if (functionError) {
 
@@ -225,17 +228,7 @@ if (functionError) {
 }
 
 
-    if (databaseError) {
-
-        console.error("Database error:", databaseError);
-
-        alert("your drawing uploaded, but something went wrong saving it :(");
-
-        return;
-    }
-
-
-    alert("your doodle has been added!! ♡");
+alert("your doodle has been added!! ♡");
 
 });
 
