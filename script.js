@@ -306,7 +306,7 @@ async function sendMessage() {
 
 
     const { data, error } =
-    await supabaseClient.functions.invoke("send-chat", {
+    await supabaseClient.functions.invoke("super-processor", {
         body: {
             username: username,
             message: message
