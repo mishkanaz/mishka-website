@@ -51,7 +51,7 @@ window.addEventListener("load", () => {
     }
   });
 
-  const audio = document.getElementById("dogsong2");
+  const audio = document.getElementById("songoftheweek");
   const playbutton = document.getElementById("playbtn");
   const playtext = document.getElementById("playtext");
 
@@ -72,7 +72,10 @@ window.addEventListener("load", () => {
   
   const clearButton = document.getElementById("clearButton");
   const submitButton = document.getElementById("submitButton");
+  const username = document.getElementById("username");
   
+
+
   let drawing = false;
   
   ctx.lineWidth = 4;
@@ -165,16 +168,21 @@ submitButton.addEventListener("click", async function() {
     });
 
     const fileName = `${Date.now()}-${crypto.randomUUID()}.png`;
+    const usernameValue = username.value.trim();
 
+
+    
 
     // Upload image to Supabase Storage
 
     const { error: uploadError } =
         await supabaseClient.storage
             .from("drawings")
-            .upload(fileName, imageBlob, {
+            .upload(fileName, imageBlob,{
                 contentType: "image/png"
-            });
+            })
+            
+           
 
 
     if (uploadError) {
@@ -202,7 +210,9 @@ submitButton.addEventListener("click", async function() {
             .from("doodles")
             .insert([
                 {
-                    image_url: data.publicUrl
+                    image_url: data.publicUrl,
+                    username: usernameValue
+                    
                 }
             ]);
 
