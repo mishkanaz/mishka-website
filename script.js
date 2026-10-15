@@ -313,10 +313,23 @@ async function sendMessage() {
     console.log("FUNCTION DATA:", data);
     console.log("FUNCTION ERROR:", error);
 
-    if (error) {
-        console.error("Could not send message:", error);
-        return;
+    
+
+if (error) {
+    console.error("Could not send message:", error);
+
+    try {
+        const response = error.context;
+        console.log("HTTP STATUS:", response?.status);
+        console.log("ERROR BODY:", await response?.clone().text());
+    } catch (e) {
+        console.error("Could not read error response:", e);
     }
+
+    return;
+}
+
+
 
     messageInput.value = "";
 
