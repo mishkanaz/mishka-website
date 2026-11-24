@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>game :3</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="fonts.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body class="
+    bg-[url('images/websitebg.png')]
+    bg-fixed
+    bg-cover
+    bg-center
+    min-h-screen
+    w-full
+    cursor-[url('images/skullcursor.webp'),auto]
+">
+
+<div class="
+    min-h-screen
+    flex flex-col
+    justify-center
+    items-center
+    gap-6
+    px-4
+    py-8
+">
+
+    <!-- GAME WINDOW -->
+    <div class="
+        w-full
+        max-w-[1366px]
+        border-4
+        border-[#754747]
+        bg-[#171313]
+        p-2
+        shadow-[8px_8px_0px_rgba(0,0,0,0.7)]
+    ">
+
+        <!-- GAME -->
+        <div class="
+            w-full
+            aspect-[1366/768]
+            bg-black
+            overflow-hidden
+        ">
+
+            <iframe
+                src="mishkagame/visa183final.html"
+                class="w-full h-full border-0 block"
+                allowfullscreen
+                title="Mishka's Game">
+            </iframe>
+
+        </div>
+    </div>
+
+
+    <!-- BACK BUTTON -->
+    <a
+        href="index.html"
+        class="
+            relative
+            w-30
+            md:w-38
+            mx-auto
+            flex
+            items-center
+            justify-center
+            hover:scale-105
+            active:scale-95
+            transition-transform
+        "
+    >
+
+        <img
+            src="images/buttonwhite.png"
+            class="w-full h-auto"
+            alt=""
+        >
+
+        <span class="
+            absolute
+            text-white
+            text-sm
+            md:text-xl
+            font-[Basis33]
+        ">
+            back
+        </span>
+
+    </a>
+
+</div>
+
+</body>
+</html>
